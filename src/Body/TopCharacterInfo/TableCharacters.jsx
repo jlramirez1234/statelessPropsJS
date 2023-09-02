@@ -1,10 +1,11 @@
-import React from 'react';
-import './TopCharacterInfo.css';
+import React from "react";
+import "./TopCharacterInfo.css";
 
 const TableCharacters = ({ characterdata }) => {
-  const filteredCharacters = characterdata.filter(
-    character => character.votes >= 90 && character.votes <= 110
-  ).sort((a, b) => b.votes - a.votes)
+  const filteredCharacters = characterdata
+    .slice()
+    .sort((a, b) => b.votes - a.votes)
+    .slice(0, 5);
 
   return (
     <tbody>
